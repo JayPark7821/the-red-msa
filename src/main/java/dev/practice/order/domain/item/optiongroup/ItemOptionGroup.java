@@ -1,4 +1,4 @@
-package dev.practice.order.domain.item;
+package dev.practice.order.domain.item.optiongroup;
 
 import java.util.List;
 
@@ -19,6 +19,8 @@ import com.google.common.collect.Lists;
 
 import dev.practice.order.common.exceptioin.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;
+import dev.practice.order.domain.item.Item;
+import dev.practice.order.domain.item.option.ItemOption;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

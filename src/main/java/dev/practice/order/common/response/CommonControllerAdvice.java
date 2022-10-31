@@ -2,6 +2,7 @@ package dev.practice.order.common.response;
 
 import com.google.common.collect.Lists;
 import dev.practice.order.common.exceptioin.BaseException;
+import dev.practice.order.common.interceptor.CommonHttpRequestInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.catalina.connector.ClientAbortException;
 import org.slf4j.MDC;
