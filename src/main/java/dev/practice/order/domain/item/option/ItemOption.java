@@ -1,4 +1,4 @@
-package dev.practice.order.domain.item;
+package dev.practice.order.domain.item.option;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +10,9 @@ import javax.persistence.Table;
 
 import org.apache.commons.lang3.StringUtils;
 
-import dev.practice.order.common.exceptioin.InvalidParamException;
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;
+import dev.practice.order.domain.item.optiongroup.ItemOptionGroup;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
