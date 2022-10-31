@@ -1,10 +1,11 @@
 package dev.practice.order.infrastructure.item;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import dev.practice.order.common.exception.EntityNotFoundException;
+import dev.practice.order.common.exceptioin.EntityNotFoundException;
 import dev.practice.order.domain.item.Item;
 import dev.practice.order.domain.item.ItemInfo;
 import dev.practice.order.domain.item.ItemReader;
@@ -24,12 +25,17 @@ public class ItemReaderImpl implements ItemReader {
     }
 
     @Override
-    public List<Item> findItemAllBy(List<String> itemTokenList) {
-        return null;
-    }
+    public List<ItemInfo.ItemOptionGroupInfo> getItemOptionSeries(Item item) {
+        // Aggregate Root : Item -> ItemOptionGroup -> ItemOption
+        var itemOptionGroupList = item.getItemOptionGroupList();
+        return itemOptionGroupList.stream()
+                .map(itemOptionGroup -> {
+                    var itemOptionList = itemOptionGroup.getItemOptionList();
+                    var itemOptionInfoList = itemOptionList.stream()
+                            .map(ItemInfo.ItemOptionInfo::new)
+                            .collect(Collectors.toList());
 
-    @Override
-    public List<ItemInfo.ItemOptionGroup> getItemOptionSeries(Item item) {
-        return null;
+                    return new ItemInfo.ItemOptionGroupInfo(itemOptionGroup, itemOptionInfoList);
+                }).collect(Collectors.toList());
     }
 }
