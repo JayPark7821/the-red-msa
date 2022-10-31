@@ -26,7 +26,6 @@ public class ItemReaderImpl implements ItemReader {
 
     @Override
     public List<ItemInfo.ItemOptionGroupInfo> getItemOptionSeries(Item item) {
-        // Aggregate Root : Item -> ItemOptionGroup -> ItemOption
         var itemOptionGroupList = item.getItemOptionGroupList();
         return itemOptionGroupList.stream()
                 .map(itemOptionGroup -> {
