@@ -1,4 +1,4 @@
-package dev.practice.order.domain.order;
+package dev.practice.order.domain.order.item;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

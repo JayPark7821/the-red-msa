@@ -25,6 +25,7 @@ import dev.practice.order.common.exceptioin.InvalidParamException;
 import dev.practice.order.common.util.TokenGenerator;
 import dev.practice.order.domain.AbstractEntity;
 import dev.practice.order.domain.order.fragment.DeliveryFragment;
+import dev.practice.order.domain.order.item.OrderItem;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
