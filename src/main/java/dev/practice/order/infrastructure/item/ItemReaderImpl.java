@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
-import dev.practice.order.common.exceptioin.EntityNotFoundException;
+import dev.practice.order.common.exception.EntityNotFoundException;
 import dev.practice.order.domain.item.Item;
 import dev.practice.order.domain.item.ItemInfo;
 import dev.practice.order.domain.item.ItemReader;

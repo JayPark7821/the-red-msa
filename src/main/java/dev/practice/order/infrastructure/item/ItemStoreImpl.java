@@ -3,7 +3,7 @@ package dev.practice.order.infrastructure.item;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
-import dev.practice.order.common.exceptioin.InvalidParamException;
+import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.item.Item;
 import dev.practice.order.domain.item.ItemStore;
 import lombok.RequiredArgsConstructor;

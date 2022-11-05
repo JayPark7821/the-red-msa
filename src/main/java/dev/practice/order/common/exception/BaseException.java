@@ -1,4 +1,4 @@
-package dev.practice.order.common.exceptioin;
+package dev.practice.order.common.exception;
 
 import dev.practice.order.common.response.ErrorCode;
 import lombok.Getter;
