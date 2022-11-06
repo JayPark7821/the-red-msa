@@ -14,7 +14,7 @@ public class NotificationExecutor implements NotificationService {
     }
 
     @Override
-    public void sendKaKao(String phoneNo, String description) {
+    public void sendKakao(String phoneNo, String description) {
         log.info("sendKaKao");
     }
 
