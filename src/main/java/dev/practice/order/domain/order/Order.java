@@ -74,9 +74,9 @@ public class Order extends AbstractEntity {
 
     @Builder
     public Order(
-            Long userId,
-            String payMethod,
-            DeliveryFragment deliveryFragment
+        Long userId,
+        String payMethod,
+        DeliveryFragment deliveryFragment
     ) {
         if (userId == null) throw new InvalidParamException("Order.userId");
         if (StringUtils.isEmpty(payMethod)) throw new InvalidParamException("Order.payMethod");
@@ -96,12 +96,23 @@ public class Order extends AbstractEntity {
      */
     public Long calculateTotalAmount() {
         return orderItemList.stream()
-                .mapToLong(OrderItem::calculateTotalAmount)
-                .sum();
+            .mapToLong(OrderItem::calculateTotalAmount)
+            .sum();
     }
 
     public void orderComplete() {
         if (this.status != Status.INIT) throw new IllegalStatusException();
         this.status = Status.ORDER_COMPLETE;
+    }
+
+    public boolean isAlreadyPaymentComplete() {
+        switch (this.status) {
+            case ORDER_COMPLETE:
+            case DELIVERY_PREPARE:
+            case IN_DELIVERY:
+            case DELIVERY_COMPLETE:
+                return true;
+        }
+        return false;
     }
 }
