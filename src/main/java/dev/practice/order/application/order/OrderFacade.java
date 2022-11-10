@@ -30,4 +30,9 @@ public class OrderFacade {
         orderService.paymentOrder(paymentRequest);
         notificationService.sendKakao(null, null);
     }
+
+    public void updateReceiverInfo(String orderToken, OrderCommand.UpdateReceiverInfoRequest orderCommand) {
+        orderService.updateReceiverInfo(orderToken, orderCommand);
+        notificationService.sendKakao(null, null);
+    }
 }
